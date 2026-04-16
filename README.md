@@ -19,9 +19,13 @@
 
 ## What it does
 
-Click the extension icon to turn the current website grayscale. Click again to turn it off. That's it.
+Click the extension icon to set the current website to grayscale. Click again to turn it off.
+Grayscale domains are stored on local storage, and re-applies automatically.
 
-Your preference is saved per domain and automatically applied when you visit that site again.
+## Features
+- Simple
+- Auditable
+- Works
 
 ## Local Install
 
