@@ -2,7 +2,7 @@
 function extractDomain(url) {
   try {
     const hostname = new URL(url).hostname;
-    return hostname.replace(/^www\./, "");
+    return hostname.replace(/^www\./, "").toLowerCase();
   } catch (e) {
     return null;
   }
@@ -10,13 +10,13 @@ function extractDomain(url) {
 
 // Get stored grayscale domains
 async function getGrayscaleDomains() {
-  const result = await browser.storage.local.get("domains");
-  return result.domains || [];
+  const result = await browser.storage.local.get("gris_grayscale_domains");
+  return result.gris_grayscale_domains || [];
 }
 
 // Save grayscale domains
 async function saveGrayscaleDomains(domains) {
-  await browser.storage.local.set({ domains });
+  await browser.storage.local.set({ gris_grayscale_domains: domains });
 }
 
 // Apply grayscale filter to tab
@@ -57,13 +57,27 @@ async function toggleGrayscale(tabId, domain) {
     // Enable grayscale
     domains.push(domain);
     await saveGrayscaleDomains(domains);
-    await applyGrayscale(tabId);
+    
+    // Apply to ALL tabs with this domain
+    const tabs = await browser.tabs.query({});
+    for (const tab of tabs) {
+      if (extractDomain(tab.url) === domain) {
+        await applyGrayscale(tab.id);
+      }
+    }
     return true;
   } else {
     // Disable grayscale
     domains.splice(index, 1);
     await saveGrayscaleDomains(domains);
-    await removeGrayscale(tabId);
+    
+    // Remove from ALL tabs with this domain
+    const tabs = await browser.tabs.query({});
+    for (const tab of tabs) {
+      if (extractDomain(tab.url) === domain) {
+        await removeGrayscale(tab.id);
+      }
+    }
     return false;
   }
 }
