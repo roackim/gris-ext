@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Background black circle for outline effect -->
+  <circle cx="24" cy="24" r="22" fill="#000"/>
+  
+  <!-- 4 colored sections on left half -->
+  <!-- Red -->
+  <path d="M 24 24 L 24 4 A 20 20 0 0 0 9.86 9.86 Z" fill="#ff3838"/>
+  <!-- Orange -->
+  <path d="M 24 24 L 9.86 9.86 A 20 20 0 0 0 4 24 Z" fill="#ff8800"/>
+  <!-- Yellow -->
+  <path d="M 24 24 L 4 24 A 20 20 0 0 0 9.86 38.14 Z" fill="#ffdd00"/>
+  <!-- Green -->
+  <path d="M 24 24 L 9.86 38.14 A 20 20 0 0 0 24 44 Z" fill="#00d66f"/>
+  
+  <!-- 4 grayscale sections on right half -->
+  <!-- Dark gray -->
+  <path d="M 24 24 L 24 4 A 20 20 0 0 1 38.14 9.86 Z" fill="#666"/>
+  <!-- Medium-dark gray -->
+  <path d="M 24 24 L 38.14 9.86 A 20 20 0 0 1 44 24 Z" fill="#888"/>
+  <!-- Medium-light gray -->
+  <path d="M 24 24 L 44 24 A 20 20 0 0 1 38.14 38.14 Z" fill="#aaa"/>
+  <!-- Light gray -->
+  <path d="M 24 24 L 38.14 38.14 A 20 20 0 0 1 24 44 Z" fill="#ccc"/>
+  
+  <!-- Circle outline -->
+  <circle cx="24" cy="24" r="20" fill="none" stroke="#000" stroke-width="3"/>
+</svg>
