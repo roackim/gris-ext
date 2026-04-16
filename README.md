@@ -1,6 +1,21 @@
-# Gris
-
-Firefox extension to toggle grayscale on websites.
+<div style="text-align: left; width: 100%;">
+<table>
+<tr>
+  <td width="30%">
+    <picture>
+      <source srcset="gris-ext/icons/icon.svg" width="150">
+      <img alt="Gris extension logo">
+    </picture>
+  </td>
+  <td width="70%">
+    <h1>
+    Gris
+    </h1>
+    Firefox extension to toggle grayscale on websites
+  </td>
+</tr>
+</table>
+</div>
 
 ## What it does
 
